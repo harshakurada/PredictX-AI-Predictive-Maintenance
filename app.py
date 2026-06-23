@@ -255,9 +255,7 @@ border-radius:15px;
 border:1px solid rgba(255,255,255,0.08);
 ">
 
-<h4 style='color:white'>
-🟢 System Status
-</h4>
+>
 
 <p style='color:#10b981'>
 All Systems Operational
