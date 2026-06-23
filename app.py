@@ -257,9 +257,7 @@ border:1px solid rgba(255,255,255,0.08);
 
 >
 
-<p style='color:#10b981'>
-All Systems Operational
-</p>
+
 
 </div>
 """, unsafe_allow_html=True)
