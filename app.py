@@ -141,6 +141,42 @@ if page == "Executive Dashboard":
         "Health Score",
         f"{avg_health:.1f}"
     )
+    st.subheader(
+        "Root Cause Insights"
+    )
+
+    top_features = (
+        importance["Feature"]
+        .head(3)
+        .tolist()
+    )
+
+    for feature in top_features:
+
+        if feature == "tool_wear_min":
+            st.warning(
+                "High tool wear is increasing risk."
+            )
+
+        elif feature == "torque_nm":
+            st.warning(
+                "Elevated torque load detected."
+            )
+
+        elif feature == "thermal_stress":
+            st.warning(
+                "Thermal stress is contributing to failure."
+            )
+
+        elif feature == "mechanical_stress":
+            st.warning(
+                "Mechanical stress is elevated."
+            )
+
+        elif feature == "power_index":
+            st.warning(
+                "Power demand is unusually high."
+            )
 
     st.markdown("---")
 
