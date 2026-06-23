@@ -111,12 +111,16 @@ st.sidebar.title("⚙️ PredictX")
 page = st.sidebar.radio(
     "Navigation",
     [
+        
         "Executive Dashboard",
         "Failure Prediction",
         "Digital Twin",
         "What-If Analysis",
+        "SHAP Explainability",
         "Fleet Intelligence",
         "Maintenance Center",
+        "Executive Analytics",
+        "Download Center",
         "Model Benchmarking"
     ]
 )
