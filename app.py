@@ -245,22 +245,30 @@ Enterprise Edition
 </div>
 """, unsafe_allow_html=True)
 st.sidebar.markdown("---")
-page = st.sidebar.radio(
-    "Navigation",
-    [
-        
-        "Executive Dashboard",
-        "Failure Prediction",
-        "Digital Twin",
-        "What-If Analysis",
-        "SHAP Explainability",
-        "Fleet Intelligence",
-        "Maintenance Center",
-        "Executive Analytics",
-        "Download Center",
-        "Model Benchmarking"
-    ]
-)
+st.sidebar.markdown("### 🏠 DASHBOARD")
+
+st.sidebar.markdown("### 🤖 PREDICTIONS")
+
+st.sidebar.markdown("""
+<small style='color:#94a3b8'>
+Failure Prediction<br>
+Digital Twin<br>
+What-If Analysis<br>
+SHAP Explainability
+</small>
+""", unsafe_allow_html=True)
+
+st.sidebar.markdown("### 📊 INTELLIGENCE")
+
+st.sidebar.markdown("""
+<small style='color:#94a3b8'>
+Fleet Intelligence<br>
+Maintenance Center<br>
+Executive Analytics
+</small>
+""", unsafe_allow_html=True)
+
+st.sidebar.markdown("### ⚙️ SYSTEM")
 
 # ==================================================
 # DASHBOARD
