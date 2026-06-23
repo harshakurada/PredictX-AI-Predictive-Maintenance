@@ -270,6 +270,22 @@ Executive Analytics
 
 st.sidebar.markdown("### ⚙️ SYSTEM")
 
+page = st.sidebar.radio(
+    "",
+    [
+        "Executive Dashboard",
+        "Failure Prediction",
+        "Digital Twin",
+        "What-If Analysis",
+        "SHAP Explainability",
+        "Fleet Intelligence",
+        "Maintenance Center",
+        "Executive Analytics",
+        "Download Center",
+        "Model Benchmarking"
+    ]
+)
+
 # ==================================================
 # DASHBOARD
 # ==================================================
