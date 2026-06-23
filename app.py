@@ -755,6 +755,54 @@ elif page == "Maintenance Center":
         use_container_width=True
     )
 
+elif page == "Executive Analytics":
+
+    st.title("📈 Executive Analytics")
+
+    avg_risk = (
+        fleet["failure_probability"]
+        .mean() * 100
+    )
+
+    critical_assets = (
+        fleet["status"] == "Critical"
+    ).sum()
+
+    avg_rul = (
+        fleet["rul_days"]
+        .mean()
+    )
+
+    estimated_downtime = (
+        critical_assets * 2.5
+    )
+
+    estimated_cost = (
+        critical_assets * 25000
+    )
+
+    c1,c2,c3,c4 = st.columns(4)
+
+    c1.metric(
+        "Avg Fleet Risk",
+        f"{avg_risk:.2f}%"
+    )
+
+    c2.metric(
+        "Critical Assets",
+        critical_assets
+    )
+
+    c3.metric(
+        "Predicted Downtime",
+        f"{estimated_downtime:.1f} hrs"
+    )
+
+    c4.metric(
+        "Maintenance Cost",
+        f"₹{estimated_cost:,.0f}"
+    )
+
 # ==================================================
 # BENCHMARKING
 # ==================================================
