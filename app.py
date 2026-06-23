@@ -132,7 +132,13 @@ page = st.sidebar.radio(
 if page == "Executive Dashboard":
 
     st.title("⚙️ PredictX")
-    st.subheader("AI-Powered Predictive Maintenance & Asset Intelligence Platform")
+
+    st.markdown("""
+    ### AI-Powered Predictive Maintenance & Asset Intelligence Platform
+
+    Predict machine failures before they happen using Explainable AI,
+    Digital Twins, and Fleet Intelligence Analytics.
+    """)
 
     total_assets = len(fleet)
 
