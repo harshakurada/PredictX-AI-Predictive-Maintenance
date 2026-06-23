@@ -162,25 +162,25 @@ if page == "Executive Dashboard":
 
     c1, c2, c3, c4 = st.columns(4)
 
-    c1.metric(
-        "Total Assets",
-        f"{total_assets}"
-    )
+c1.metric(
+"📦 Total Assets",
+f"{total_assets}"
+)
 
-    c2.metric(
-        "Critical Assets",
-        f"{critical_assets}"
-    )
+c2.metric(
+    "🚨 Critical Assets",
+    f"{critical_assets}"
+)
 
-    c3.metric(
-        "Average Risk %",
-        f"{avg_risk:.2f}"
-    )
+c3.metric(
+    "📈 Average Risk %",
+    f"{avg_risk:.2f}"
+)
 
-    c4.metric(
-        "Health Score",
-        f"{avg_health:.1f}"
-    )
+c4.metric(
+    "💚 Health Score",
+    f"{avg_health:.1f}"
+)
 
         
 
