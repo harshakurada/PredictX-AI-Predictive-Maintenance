@@ -802,7 +802,49 @@ elif page == "Executive Analytics":
         "Maintenance Cost",
         f"₹{estimated_cost:,.0f}"
     )
+    st.markdown("---")
 
+    trend = (
+        fleet
+        .sort_values(
+            "failure_probability"
+        )
+        .reset_index()
+    )
+
+    fig = px.line(
+        trend,
+        y="failure_probability",
+        title="Fleet Risk Trend"
+    )
+
+    st.plotly_chart(
+        fig,
+        use_container_width=True
+    )
+
+    st.subheader("🚨 Top 10 Highest Risk Assets")
+
+    top10 = (
+        fleet
+        .sort_values(
+            "failure_probability",
+            ascending=False
+        )
+        .head(10)
+    )
+
+    st.dataframe(
+        top10[
+            [
+                "Machine_ID",
+                "failure_probability",
+                "rul_days",
+                "maintenance_priority"
+            ]
+        ],
+        use_container_width=True
+    )
 
 elif page == "Download Center":
 
