@@ -135,7 +135,13 @@ page = st.sidebar.radio(
 # DASHBOARD
 # ==================================================
 
-st.markdown("""
+# ==================================================
+# DASHBOARD
+# ==================================================
+
+if page == "Executive Dashboard":
+
+    st.markdown("""
     <div style="
     background:rgba(15,23,42,0.75);
     padding:25px;
