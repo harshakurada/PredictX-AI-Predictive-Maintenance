@@ -306,6 +306,133 @@ elif page == "Failure Prediction":
             st.error("Critical")
 
 # ==================================================
+# DIGITAL TWIN
+# ==================================================
+
+elif page == "Digital Twin":
+
+    st.title("🛰️ Digital Twin Simulator")
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+
+        air_temp = st.slider(
+            "Air Temperature",
+            295,305,300,
+            key="dt_air"
+        )
+
+        process_temp = st.slider(
+            "Process Temperature",
+            305,315,310,
+            key="dt_process"
+        )
+
+        rpm = st.slider(
+            "RPM",
+            1100,1800,1500,
+            key="dt_rpm"
+        )
+
+    with col2:
+
+        torque = st.slider(
+            "Torque",
+            10,80,40,
+            key="dt_torque"
+        )
+
+        tool_wear = st.slider(
+            "Tool Wear",
+            0,250,100,
+            key="dt_wear"
+        )
+
+        machine_type = st.selectbox(
+            "Machine Type",
+            [0,1,2],
+            key="dt_type"
+        )
+
+    sample = create_features(
+        air_temp,
+        process_temp,
+        rpm,
+        torque,
+        tool_wear,
+        machine_type
+    )
+
+    risk = model.predict_proba(sample)[0][1]
+
+    health = max(
+        0,
+        100 - (risk * 100)
+    )
+
+    c1,c2 = st.columns(2)
+
+    with c1:
+
+        fig = go.Figure(
+            go.Indicator(
+                mode="gauge+number",
+                value=risk*100,
+                title={"text":"Failure Risk %"},
+                gauge={
+                    "axis":{
+                        "range":[0,100]
+                    }
+                }
+            )
+        )
+
+        st.plotly_chart(
+            fig,
+            use_container_width=True
+        )
+
+    with c2:
+
+        fig = go.Figure(
+            go.Indicator(
+                mode="gauge+number",
+                value=health,
+                title={"text":"Health Score"},
+                gauge={
+                    "axis":{
+                        "range":[0,100]
+                    }
+                }
+            )
+        )
+
+        st.plotly_chart(
+            fig,
+            use_container_width=True
+        )
+
+    st.subheader(
+        "Maintenance Recommendations"
+    )
+
+    if tool_wear > 180:
+        st.warning(
+            "Replace Tool Immediately"
+        )
+
+    if torque > 60:
+        st.warning(
+            "Inspect Motor Assembly"
+        )
+
+    if risk > 0.80:
+        st.error(
+            "Immediate Maintenance Required"
+        )
+
+# ==================================================
 # FLEET INTELLIGENCE
 # ==================================================
 
