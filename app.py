@@ -295,8 +295,6 @@ st.sidebar.markdown("### 🏠 DASHBOARD")
 
 st.sidebar.markdown("### 🤖 PREDICTIONS")
 
-st.sidebar.markdown("### 🤖 PREDICTIONS")
-
 st.sidebar.markdown("""
 <small style='color:#94a3b8'>
 Failure Prediction<br>
