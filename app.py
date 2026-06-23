@@ -29,6 +29,48 @@ def load_model():
 
 fleet = load_data()
 model = load_model()
+def create_features(
+    air_temp,
+    process_temp,
+    rpm,
+    torque,
+    tool_wear,
+    machine_type
+):
+
+    temp_difference = process_temp - air_temp
+
+    power_index = torque * rpm
+
+    wear_torque_interaction = tool_wear * torque
+
+    wear_speed_ratio = tool_wear / rpm
+
+    health_score = (
+        100
+        - (tool_wear / 250) * 50
+        - (torque / 80) * 50
+    )
+
+    thermal_stress = temp_difference * torque
+
+    mechanical_stress = torque * tool_wear
+
+    return pd.DataFrame({
+        "air_temperature_k":[air_temp],
+        "process_temperature_k":[process_temp],
+        "rotational_speed_rpm":[rpm],
+        "torque_nm":[torque],
+        "tool_wear_min":[tool_wear],
+        "temp_difference":[temp_difference],
+        "power_index":[power_index],
+        "wear_torque_interaction":[wear_torque_interaction],
+        "wear_speed_ratio":[wear_speed_ratio],
+        "health_score":[health_score],
+        "thermal_stress":[thermal_stress],
+        "mechanical_stress":[mechanical_stress],
+        "type_encoded":[machine_type]
+    })
 
 # ==================================================
 # SIDEBAR
