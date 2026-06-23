@@ -292,7 +292,7 @@ with c4:
 # FAILURE PREDICTION
 # ==================================================
 
-elif page == "Failure Prediction":
+    elif page == "Failure Prediction":
 
     st.title("🔮 Failure Prediction")
 
