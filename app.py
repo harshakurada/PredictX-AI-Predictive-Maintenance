@@ -433,6 +433,89 @@ elif page == "Digital Twin":
         )
 
 # ==================================================
+# WHAT IF ANALYSIS
+# ==================================================
+
+elif page == "What-If Analysis":
+
+    st.title("🔬 What-If Analysis")
+
+    left,right = st.columns(2)
+
+    with left:
+
+        st.subheader(
+            "Current Machine"
+        )
+
+        current_torque = st.slider(
+            "Current Torque",
+            10,80,40
+        )
+
+        current_wear = st.slider(
+            "Current Wear",
+            0,250,100
+        )
+
+    with right:
+
+        st.subheader(
+            "Future Scenario"
+        )
+
+        future_torque = st.slider(
+            "Future Torque",
+            10,80,60
+        )
+
+        future_wear = st.slider(
+            "Future Wear",
+            0,250,180
+        )
+
+    current_risk = min(
+        1,
+        current_torque/100 +
+        current_wear/400
+    )
+
+    future_risk = min(
+        1,
+        future_torque/100 +
+        future_wear/400
+    )
+
+    comparison = pd.DataFrame({
+        "Scenario":[
+            "Current",
+            "Future"
+        ],
+        "Risk":[
+            current_risk*100,
+            future_risk*100
+        ]
+    })
+
+    fig = px.bar(
+        comparison,
+        x="Scenario",
+        y="Risk",
+        color="Scenario",
+        title="Risk Comparison"
+    )
+
+    st.plotly_chart(
+        fig,
+        use_container_width=True
+    )
+
+    st.metric(
+        "Risk Change",
+        f"{(future_risk-current_risk)*100:.2f}%"
+    )
+
+# ==================================================
 # FLEET INTELLIGENCE
 # ==================================================
 
