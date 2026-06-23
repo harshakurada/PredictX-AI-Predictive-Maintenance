@@ -41,6 +41,8 @@ page = st.sidebar.radio(
     [
         "Executive Dashboard",
         "Failure Prediction",
+        "Digital Twin",
+        "What-If Analysis",
         "Fleet Intelligence",
         "Maintenance Center",
         "Model Benchmarking"
