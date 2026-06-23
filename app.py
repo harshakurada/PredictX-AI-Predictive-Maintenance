@@ -106,7 +106,13 @@ def create_features(
 # SIDEBAR
 # ==================================================
 
-st.sidebar.title("⚙️ PredictX")
+st.sidebar.markdown("""
+# ⚙️ PredictX
+
+### AI Maintenance Platform
+
+Built with XGBoost • SHAP • Streamlit
+""")
 
 page = st.sidebar.radio(
     "Navigation",
