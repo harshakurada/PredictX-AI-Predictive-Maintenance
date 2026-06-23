@@ -970,3 +970,17 @@ elif page == "Model Benchmarking":
         benchmark,
         use_container_width=True
     )
+
+st.markdown("---")
+
+st.markdown("""
+<center>
+
+### ⚡ PredictX Enterprise Edition
+
+AI-Powered Predictive Maintenance & Asset Intelligence Platform
+
+Built using XGBoost • SHAP • Streamlit • Plotly
+
+</center>
+""", unsafe_allow_html=True)
