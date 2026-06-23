@@ -860,11 +860,11 @@ elif page == "Download Center":
         index=False
     )
 
-        st.download_button(
-        label="Download Fleet Report",
-        data=csv,
-        file_name="fleet_report.csv",
-        mime="text/csv"
+    st.download_button(
+    label="Download Fleet Report",
+    data=csv,
+    file_name="fleet_report.csv",
+    mime="text/csv"
     )
 
     high_risk = fleet[
