@@ -162,25 +162,61 @@ if page == "Executive Dashboard":
 
     c1, c2, c3, c4 = st.columns(4)
 
-    c1.metric(
-        "📦 Total Assets",
-        f"{total_assets}"
-    )
+    
 
-    c2.metric(
-        "🚨 Critical Assets",
-        f"{critical_assets}"
-    )
+    c1, c2, c3, c4 = st.columns(4)
 
-    c3.metric(
-        "📈 Average Risk %",
-        f"{avg_risk:.2f}"
-    )
+    with c1:
+        st.markdown(f"""
+        <div style="
+        background:linear-gradient(135deg,#4f46e5,#7c3aed);
+        padding:20px;
+        border-radius:20px;
+        color:white;
+        text-align:center;">
+        <h4>📦 Total Assets</h4>
+        <h1>{total_assets}</h1>
+        </div>
+    """, unsafe_allow_html=True)
 
-    c4.metric(
-        "💚 Health Score",
-        f"{avg_health:.1f}"
-    )
+    with c2:
+        st.markdown(f"""
+        <div style="
+        background:linear-gradient(135deg,#dc2626,#ef4444);
+        padding:20px;
+        border-radius:20px;
+        color:white;
+        text-align:center;">
+        <h4>🚨 Critical Assets</h4>
+        <h1>{critical_assets}</h1>
+        </div>
+        """, unsafe_allow_html=True)
+
+    with c3:
+        st.markdown(f"""
+        <div style="
+        background:linear-gradient(135deg,#f59e0b,#f97316);
+        padding:20px;
+        border-radius:20px;
+        color:white;
+        text-align:center;">
+        <h4>📈 Average Risk %</h4>
+        <h1>{avg_risk:.2f}</h1>
+        </div>
+        """, unsafe_allow_html=True)
+
+    with c4:
+        st.markdown(f"""
+        <div style="
+        background:linear-gradient(135deg,#059669,#10b981);
+        padding:20px;
+        border-radius:20px;
+        color:white;
+        text-align:center;">
+        <h4>💚 Health Score</h4>
+        <h1>{avg_health:.1f}</h1>
+        </div>
+        """, unsafe_allow_html=True)
 
         
 
