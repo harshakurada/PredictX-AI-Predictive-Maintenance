@@ -47,6 +47,29 @@ section[data-testid="stSidebar"]{
     border-right:
     1px solid rgba(255,255,255,0.08);
 }
+.hover-card{
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,0.08);
+    padding:20px;
+    border-radius:20px;
+    text-align:center;
+    transition: all 0.35s ease;
+}
+
+.hover-card:hover{
+    transform:
+    translateY(-8px)
+    scale(1.03);
+
+    box-shadow:
+    0px 20px 40px
+    rgba(79,70,229,0.35);
+
+    border:
+    1px solid
+    rgba(99,102,241,0.6);
+}
 
 /* Main Containers */
 
