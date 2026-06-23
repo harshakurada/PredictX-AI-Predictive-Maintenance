@@ -22,25 +22,120 @@ st.set_page_config(
 st.markdown("""
 <style>
 
-.main {
-    background-color: #0e1117;
+/* =========================
+   GLASSMORPHISM THEME
+========================= */
+
+.stApp{
+    background:
+    linear-gradient(
+        135deg,
+        #020617 0%,
+        #0f172a 40%,
+        #111827 100%
+    );
 }
 
-[data-testid="stMetric"] {
-    background: #111827;
-    border: 1px solid #374151;
-    padding: 18px;
-    border-radius: 15px;
-    text-align: center;
+/* Sidebar */
+
+section[data-testid="stSidebar"]{
+    background:
+    rgba(15,23,42,0.85);
+
+    backdrop-filter: blur(20px);
+
+    border-right:
+    1px solid rgba(255,255,255,0.08);
 }
 
-div[data-testid="stMetricValue"] {
-    font-size: 28px;
-    font-weight: bold;
+/* Main Containers */
+
+.block-container{
+    padding-top:2rem;
 }
 
-h1,h2,h3 {
-    color: #f9fafb;
+/* Plotly Charts */
+
+[data-testid="stPlotlyChart"]{
+    background:
+    rgba(255,255,255,0.05);
+
+    backdrop-filter: blur(20px);
+
+    border:
+    1px solid rgba(255,255,255,0.08);
+
+    border-radius:20px;
+
+    padding:10px;
+}
+
+/* Dataframes */
+
+[data-testid="stDataFrame"]{
+    background:
+    rgba(255,255,255,0.05);
+
+    backdrop-filter: blur(20px);
+
+    border-radius:20px;
+
+    border:
+    1px solid rgba(255,255,255,0.08);
+
+    padding:10px;
+}
+
+/* Buttons */
+
+.stButton button{
+
+    background:
+    linear-gradient(
+        135deg,
+        #4f46e5,
+        #7c3aed
+    );
+
+    color:white;
+
+    border:none;
+
+    border-radius:12px;
+
+    font-weight:bold;
+}
+
+/* Download Buttons */
+
+.stDownloadButton button{
+
+    background:
+    linear-gradient(
+        135deg,
+        #059669,
+        #10b981
+    );
+
+    color:white;
+
+    border:none;
+
+    border-radius:12px;
+
+    font-weight:bold;
+}
+
+/* Headings */
+
+h1,h2,h3,h4{
+    color:white !important;
+}
+
+/* Paragraphs */
+
+p{
+    color:#cbd5e1;
 }
 
 </style>
