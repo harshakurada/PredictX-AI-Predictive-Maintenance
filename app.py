@@ -326,7 +326,7 @@ if page == "Executive Dashboard":
 
     with c1:
         st.markdown(f"""
-        <div style="{CARD_STYLE}">
+        <div class="hover-card">
             <p style="color:#94a3b8;font-size:14px;">
                 📦 Total Assets
             </p>
@@ -338,7 +338,7 @@ if page == "Executive Dashboard":
 
     with c2:
         st.markdown(f"""
-        <div style="{CARD_STYLE}">
+        <div class="hover-card">
             <p style="color:#94a3b8;font-size:14px;">
                 🚨 Critical Assets
             </p>
@@ -350,7 +350,7 @@ if page == "Executive Dashboard":
 
     with c3:
         st.markdown(f"""
-        <div style="{CARD_STYLE}">
+        <div class="hover-card">
             <p style="color:#94a3b8;font-size:14px;">
                 📈 Average Risk
             </p>
@@ -362,7 +362,7 @@ if page == "Executive Dashboard":
 
     with c4:
         st.markdown(f"""
-        <div style="{CARD_STYLE}">
+        <div class="hover-card">
             <p style="color:#94a3b8;font-size:14px;">
                 💚 Health Score
             </p>
