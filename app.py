@@ -272,8 +272,7 @@ if page == "Executive Dashboard":
 # ==================================================
 # FAILURE PREDICTION
 # ==================================================
-
-    elif page == "Failure Prediction":
+elif page == "Failure Prediction":
 
     st.title("🔮 Failure Prediction")
 
