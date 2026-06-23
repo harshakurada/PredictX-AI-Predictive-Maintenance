@@ -296,41 +296,84 @@ if page == "Executive Dashboard":
     border:1px solid rgba(255,255,255,0.08);
     padding:20px;
     border-radius:20px;
+    text-align:center;
     """
 
     c1, c2, c3, c4 = st.columns(4)
 
-
-   with c1:
-    st.markdown(f"""
-    <div style="{CARD_STYLE}">
-    <p style="color:#94a3b8;">📦 Total Assets</p>
-    <h1>{total_assets}</h1>
-    </div>
-    """, unsafe_allow_html=True)
+    with c1:
+        st.markdown(f"""
+        <div style="{CARD_STYLE}">
+            <p style="color:#94a3b8;font-size:14px;">
+                📦 Total Assets
+            </p>
+            <h1 style="color:white;">
+                {total_assets}
+            </h1>
+        </div>
+        """, unsafe_allow_html=True)
 
     with c2:
-    st.markdown(f"""
-    <div style="{CARD_STYLE}">
-    <p style="color:#94a3b8;">🚨 Critical Assets</p>
-    <h1>{critical_assets}</h1>
-    </div>
-    """, unsafe_allow_html=True)
+        st.markdown(f"""
+        <div style="{CARD_STYLE}">
+            <p style="color:#94a3b8;font-size:14px;">
+                🚨 Critical Assets
+            </p>
+            <h1 style="color:white;">
+                {critical_assets}
+            </h1>
+        </div>
+        """, unsafe_allow_html=True)
 
     with c3:
-    st.markdown(f"""
-    <div style="{CARD_STYLE}">
-    <p style="color:#94a3b8;">📈 Average Risk</p>
-    <h1>{avg_risk:.1f}%</h1>
+        st.markdown(f"""
+        <div style="{CARD_STYLE}">
+            <p style="color:#94a3b8;font-size:14px;">
+                📈 Average Risk
+            </p>
+            <h1 style="color:white;">
+                {avg_risk:.2f}%
+            </h1>
+        </div>
+        """, unsafe_allow_html=True)
+
+    with c4:
+        st.markdown(f"""
+        <div style="{CARD_STYLE}">
+            <p style="color:#94a3b8;font-size:14px;">
+                💚 Health Score
+            </p>
+            <h1 style="color:white;">
+                {avg_health:.1f}
+            </h1>
+        </div>
+        """, unsafe_allow_html=True)
+
+    st.markdown("<br>", unsafe_allow_html=True)
+
+    st.markdown("""
+    <div style="
+    background:rgba(16,185,129,0.15);
+    padding:15px;
+    border-radius:15px;
+    border:1px solid rgba(16,185,129,0.30);
+    color:white;
+    ">
+    🟢 Fleet Status: Operational &nbsp;&nbsp;&nbsp;
+    🧠 AI Model: Active &nbsp;&nbsp;&nbsp;
+    📡 Monitoring: Live
     </div>
     """, unsafe_allow_html=True)
 
-    with c4:
-    st.markdown(f"""
-    <div style="{CARD_STYLE}">
-    <p style="color:#94a3b8;">💚 Health Score</p>
-    <h1>{avg_health:.1f}</h1>
-    </div>
+    st.markdown("<br>", unsafe_allow_html=True)
+
+    st.markdown("""
+    <h2 style="
+    color:white;
+    margin-top:10px;
+    ">
+    📊 Fleet Intelligence Overview
+    </h2>
     """, unsafe_allow_html=True)
         
 
