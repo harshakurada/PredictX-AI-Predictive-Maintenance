@@ -4,6 +4,9 @@ import numpy as np
 import joblib
 import plotly.express as px
 import plotly.graph_objects as go
+import shap
+
+st.sidebar.success("SHAP Loaded Successfully")
 
 # ==================================================
 # PAGE CONFIG
