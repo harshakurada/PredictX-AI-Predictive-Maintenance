@@ -803,6 +803,22 @@ elif page == "Executive Analytics":
         f"₹{estimated_cost:,.0f}"
     )
 
+
+elif page == "Download Center":
+
+    st.title("📥 Download Center")
+
+    csv = fleet.to_csv(
+        index=False
+    )
+
+    st.download_button(
+        label="Download Fleet Report",
+        data=csv,
+        file_name="fleet_report.csv",
+        mime="text/csv"
+    )
+
 # ==================================================
 # BENCHMARKING
 # ==================================================
