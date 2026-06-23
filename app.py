@@ -221,7 +221,7 @@ Enterprise Edition
 
 </div>
 """, unsafe_allow_html=True)
-
+st.sidebar.markdown("---")
 page = st.sidebar.radio(
     "Navigation",
     [
