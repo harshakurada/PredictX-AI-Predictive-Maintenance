@@ -202,12 +202,25 @@ def create_features(
 # ==================================================
 
 st.sidebar.markdown("""
-# ⚙️ PredictX
+<div style="
+padding:20px;
+border-radius:20px;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,0.08);
+text-align:center;
+">
 
-### AI Maintenance Platform
+<h1 style="color:white;">
+⚙️ PredictX
+</h1>
 
-Built with XGBoost • SHAP • Streamlit
-""")
+<p style="color:#94a3b8;">
+Enterprise Edition
+</p>
+
+</div>
+""", unsafe_allow_html=True)
 
 page = st.sidebar.radio(
     "Navigation",
