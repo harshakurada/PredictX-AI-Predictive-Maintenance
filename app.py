@@ -19,7 +19,32 @@ st.set_page_config(
     page_icon="⚙️",
     layout="wide"
 )
+st.markdown("""
+<style>
 
+.main {
+    background-color: #0e1117;
+}
+
+[data-testid="stMetric"] {
+    background: #111827;
+    border: 1px solid #374151;
+    padding: 18px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+div[data-testid="stMetricValue"] {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+h1,h2,h3 {
+    color: #f9fafb;
+}
+
+</style>
+""", unsafe_allow_html=True)
 # ==================================================
 # LOAD DATA
 # ==================================================
