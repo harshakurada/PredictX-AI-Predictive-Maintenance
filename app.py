@@ -7,6 +7,8 @@ import plotly.graph_objects as go
 import shap
 
 st.sidebar.success("SHAP Loaded Successfully")
+import shap
+import matplotlib.pyplot as plt
 
 # ==================================================
 # PAGE CONFIG
@@ -516,6 +518,125 @@ elif page == "What-If Analysis":
     st.metric(
         "Risk Change",
         f"{(future_risk-current_risk)*100:.2f}%"
+    )
+
+# ==================================================
+# SHAP EXPLAINABILITY
+# ==================================================
+
+elif page == "SHAP Explainability":
+
+    st.title("🧠 Explainable AI Dashboard")
+
+    st.markdown(
+        """
+        Understand why the XGBoost model predicts
+        machine failures.
+        """
+    )
+
+    feature_cols = [
+        'air_temperature_k',
+        'process_temperature_k',
+        'rotational_speed_rpm',
+        'torque_nm',
+        'tool_wear_min',
+        'temp_difference',
+        'power_index',
+        'wear_torque_interaction',
+        'wear_speed_ratio',
+        'health_score',
+        'thermal_stress',
+        'mechanical_stress',
+        'type_encoded'
+    ]
+
+    sample_data = fleet.head(200).copy()
+
+    explainer = shap.TreeExplainer(model)
+
+    shap_values = explainer.shap_values(
+        sample_data[feature_cols]
+    )
+
+    st.subheader(
+        "Global Feature Importance"
+    )
+
+    fig, ax = plt.subplots(
+        figsize=(10,6)
+    )
+
+    shap.summary_plot(
+        shap_values,
+        sample_data[feature_cols],
+        plot_type="bar",
+        show=False
+    )
+
+    st.pyplot(fig)
+
+    st.markdown("---")
+
+    st.subheader(
+        "Machine Level Explanation"
+    )
+
+    selected_machine = st.selectbox(
+        "Select Machine",
+        sample_data["Machine_ID"]
+    )
+
+    machine_row = sample_data[
+        sample_data["Machine_ID"]
+        ==
+        selected_machine
+    ]
+
+    machine_features = (
+        machine_row[feature_cols]
+    )
+
+    local_shap = explainer.shap_values(
+        machine_features
+    )
+
+    importance = pd.DataFrame({
+        "Feature": feature_cols,
+        "Impact": np.abs(
+            local_shap[0]
+        )
+    })
+
+    importance = (
+        importance
+        .sort_values(
+            "Impact",
+            ascending=False
+        )
+        .head(10)
+    )
+
+    fig = px.bar(
+        importance,
+        x="Impact",
+        y="Feature",
+        orientation="h",
+        title="Top Drivers of Failure Risk"
+    )
+
+    st.plotly_chart(
+        fig,
+        use_container_width=True
+    )
+
+    prob = model.predict_proba(
+        machine_features
+    )[0][1]
+
+    st.metric(
+        "Failure Probability",
+        f"{prob:.2%}"
     )
 
 # ==================================================
