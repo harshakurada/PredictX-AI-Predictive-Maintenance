@@ -860,10 +860,25 @@ elif page == "Download Center":
         index=False
     )
 
-    st.download_button(
+        st.download_button(
         label="Download Fleet Report",
         data=csv,
         file_name="fleet_report.csv",
+        mime="text/csv"
+    )
+
+    high_risk = fleet[
+        fleet["failure_probability"] > 0.7
+    ]
+
+    csv2 = high_risk.to_csv(
+        index=False
+    )
+
+    st.download_button(
+        label="Download High Risk Assets",
+        data=csv2,
+        file_name="high_risk_assets.csv",
         mime="text/csv"
     )
 
