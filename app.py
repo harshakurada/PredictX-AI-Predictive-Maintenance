@@ -290,61 +290,48 @@ if page == "Executive Dashboard":
     avg_health = (
         fleet["health_score"].mean()
     )
+    CARD_STYLE = """
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,0.08);
+    padding:20px;
+    border-radius:20px;
+    """
 
     c1, c2, c3, c4 = st.columns(4)
 
 
-    with c1:
-        st.markdown(f"""
-        <div style="
-        background:linear-gradient(135deg,#4f46e5,#7c3aed);
-        padding:20px;
-        border-radius:20px;
-        color:white;
-        text-align:center;">
-        <h4>📦 Total Assets</h4>
-        <h1>{total_assets}</h1>
-        </div>
+   with c1:
+    st.markdown(f"""
+    <div style="{CARD_STYLE}">
+    <p style="color:#94a3b8;">📦 Total Assets</p>
+    <h1>{total_assets}</h1>
+    </div>
     """, unsafe_allow_html=True)
 
     with c2:
-        st.markdown(f"""
-        <div style="
-        background:linear-gradient(135deg,#dc2626,#ef4444);
-        padding:20px;
-        border-radius:20px;
-        color:white;
-        text-align:center;">
-        <h4>🚨 Critical Assets</h4>
-        <h1>{critical_assets}</h1>
-        </div>
-        """, unsafe_allow_html=True)
+    st.markdown(f"""
+    <div style="{CARD_STYLE}">
+    <p style="color:#94a3b8;">🚨 Critical Assets</p>
+    <h1>{critical_assets}</h1>
+    </div>
+    """, unsafe_allow_html=True)
 
     with c3:
-        st.markdown(f"""
-        <div style="
-        background:linear-gradient(135deg,#f59e0b,#f97316);
-        padding:20px;
-        border-radius:20px;
-        color:white;
-        text-align:center;">
-        <h4>📈 Average Risk %</h4>
-        <h1>{avg_risk:.2f}</h1>
-        </div>
-        """, unsafe_allow_html=True)
+    st.markdown(f"""
+    <div style="{CARD_STYLE}">
+    <p style="color:#94a3b8;">📈 Average Risk</p>
+    <h1>{avg_risk:.1f}%</h1>
+    </div>
+    """, unsafe_allow_html=True)
 
     with c4:
-        st.markdown(f"""
-        <div style="
-        background:linear-gradient(135deg,#059669,#10b981);
-        padding:20px;
-        border-radius:20px;
-        color:white;
-        text-align:center;">
-        <h4>💚 Health Score</h4>
-        <h1>{avg_health:.1f}</h1>
-        </div>
-        """, unsafe_allow_html=True)
+    st.markdown(f"""
+    <div style="{CARD_STYLE}">
+    <p style="color:#94a3b8;">💚 Health Score</p>
+    <h1>{avg_health:.1f}</h1>
+    </div>
+    """, unsafe_allow_html=True)
         
 
         
