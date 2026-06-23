@@ -131,14 +131,19 @@ page = st.sidebar.radio(
 
 if page == "Executive Dashboard":
 
-    st.title("⚙️ PredictX")
-
     st.markdown("""
-    ### AI-Powered Predictive Maintenance & Asset Intelligence Platform
+    <div style='padding:10px 0px 20px 0px;'>
 
-    Predict machine failures before they happen using Explainable AI,
-    Digital Twins, and Fleet Intelligence Analytics.
-    """)
+    <h1 style='font-size:48px;margin-bottom:0px;'>
+    👋 Welcome Back
+    </h1>
+
+    <p style='font-size:22px;color:#94a3b8;'>
+    Here's what's happening with your fleet today.
+    </p>
+
+    </div>
+    """, unsafe_allow_html=True)
 
     total_assets = len(fleet)
 
