@@ -135,21 +135,32 @@ page = st.sidebar.radio(
 # DASHBOARD
 # ==================================================
 
-if page == "Executive Dashboard":
+st.markdown("""
+<div style="
+background:rgba(15,23,42,0.75);
+padding:25px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,0.08);
+margin-bottom:25px;
+">
 
-    st.markdown("""
-    <div style='padding:10px 0px 20px 0px;'>
+<h1 style="
+font-size:52px;
+color:white;
+margin-bottom:10px;
+">
+⚙️ PredictX Enterprise
+</h1>
 
-    <h1 style='font-size:48px;margin-bottom:0px;'>
-    👋 Welcome Back
-    </h1>
+<p style="
+font-size:20px;
+color:#94a3b8;
+">
+AI-Powered Predictive Maintenance & Asset Intelligence Platform
+</p>
 
-    <p style='font-size:22px;color:#94a3b8;'>
-    Here's what's happening with your fleet today.
-    </p>
-
-    </div>
-    """, unsafe_allow_html=True)
+</div>
+""", unsafe_allow_html=True)
 
     total_assets = len(fleet)
 
