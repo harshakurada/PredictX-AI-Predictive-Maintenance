@@ -6,7 +6,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import shap
 
-st.sidebar.success("SHAP Loaded Successfully")
+
 import shap
 import matplotlib.pyplot as plt
 
