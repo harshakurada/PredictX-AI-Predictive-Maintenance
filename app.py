@@ -236,11 +236,11 @@ with c4:
     </div>
     """, unsafe_allow_html=True)
 
-st.markdown("---")
+    st.markdown("---")
 
-st.markdown("## 📊 Fleet Overview")
+    st.markdown("## 📊 Fleet Overview")
 
-col1, col2 = st.columns(2)
+    col1, col2 = st.columns(2)
         
 
     st.markdown("---")
