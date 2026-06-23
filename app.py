@@ -245,16 +245,7 @@ Enterprise Edition
 </div>
 """, unsafe_allow_html=True)
 
-st.sidebar.markdown("<br>", unsafe_allow_html=True)
 
-
-
-
-
-</div>
-""", unsafe_allow_html=True)
-
-st.sidebar.markdown("<br>", unsafe_allow_html=True)
 
 st.sidebar.markdown("""
 <div style="
