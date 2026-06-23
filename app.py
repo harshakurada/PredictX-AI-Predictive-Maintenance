@@ -247,15 +247,7 @@ Enterprise Edition
 
 st.sidebar.markdown("<br>", unsafe_allow_html=True)
 
-st.sidebar.markdown("""
-<div style="
-background:rgba(255,255,255,0.05);
-padding:15px;
-border-radius:15px;
-border:1px solid rgba(255,255,255,0.08);
-">
 
->
 
 
 
