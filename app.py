@@ -244,8 +244,56 @@ Enterprise Edition
 
 </div>
 """, unsafe_allow_html=True)
+
+st.sidebar.markdown("<br>", unsafe_allow_html=True)
+
+st.sidebar.markdown("""
+<div style="
+background:rgba(255,255,255,0.05);
+padding:15px;
+border-radius:15px;
+border:1px solid rgba(255,255,255,0.08);
+">
+
+<h4 style='color:white'>
+🟢 System Status
+</h4>
+
+<p style='color:#10b981'>
+All Systems Operational
+</p>
+
+</div>
+""", unsafe_allow_html=True)
+
+st.sidebar.markdown("<br>", unsafe_allow_html=True)
+
+st.sidebar.markdown("""
+<div style="
+background:rgba(255,255,255,0.05);
+padding:15px;
+border-radius:15px;
+border:1px solid rgba(255,255,255,0.08);
+">
+
+<h4 style='color:white'>
+🟢 System Status
+</h4>
+
+<p style='color:#10b981'>
+All Systems Operational
+</p>
+
+</div>
+""", unsafe_allow_html=True)
+
+# 👇 THEN CONTINUE
+
 st.sidebar.markdown("---")
+
 st.sidebar.markdown("### 🏠 DASHBOARD")
+
+st.sidebar.markdown("### 🤖 PREDICTIONS")
 
 st.sidebar.markdown("### 🤖 PREDICTIONS")
 
