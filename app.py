@@ -168,9 +168,6 @@ if page == "Executive Dashboard":
 
     c1, c2, c3, c4 = st.columns(4)
 
-    
-
-    c1, c2, c3, c4 = st.columns(4)
 
     with c1:
         st.markdown(f"""
@@ -223,24 +220,8 @@ if page == "Executive Dashboard":
         <h1>{avg_health:.1f}</h1>
         </div>
         """, unsafe_allow_html=True)
-with c4:
-    st.markdown(f"""
-    <div style="
-    background:linear-gradient(135deg,#059669,#10b981);
-    padding:20px;
-    border-radius:20px;
-    color:white;
-    text-align:center;">
-    <h4>💚 Health Score</h4>
-    <h1>{avg_health:.1f}</h1>
-    </div>
-    """, unsafe_allow_html=True)
+        
 
-    st.markdown("---")
-
-    st.markdown("## 📊 Fleet Overview")
-
-    col1, col2 = st.columns(2)
         
 
     st.markdown("---")
