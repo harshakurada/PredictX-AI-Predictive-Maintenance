@@ -136,31 +136,31 @@ page = st.sidebar.radio(
 # ==================================================
 
 st.markdown("""
-<div style="
-background:rgba(15,23,42,0.75);
-padding:25px;
-border-radius:20px;
-border:1px solid rgba(255,255,255,0.08);
-margin-bottom:25px;
-">
+    <div style="
+    background:rgba(15,23,42,0.75);
+    padding:25px;
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,0.08);
+    margin-bottom:25px;
+    ">
 
-<h1 style="
-font-size:52px;
-color:white;
-margin-bottom:10px;
-">
-⚙️ PredictX Enterprise
-</h1>
+    <h1 style="
+    font-size:52px;
+    color:white;
+    margin-bottom:10px;
+    ">
+    ⚙️ PredictX Enterprise
+    </h1>
 
-<p style="
-font-size:20px;
-color:#94a3b8;
-">
-AI-Powered Predictive Maintenance & Asset Intelligence Platform
-</p>
+    <p style="
+    font-size:20px;
+    color:#94a3b8;
+    ">
+    AI-Powered Predictive Maintenance & Asset Intelligence Platform
+    </p>
 
-</div>
-""", unsafe_allow_html=True)
+    </div>
+    """, unsafe_allow_html=True)
 
     total_assets = len(fleet)
 
